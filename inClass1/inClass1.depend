@@ -1,4 +1,10 @@
 # depslib dependency file v1.0
-1488349040 source:c:\users\posd\desktop\oop2017s\inclass1\main.cpp
+1488787186 source:c:\users\posd\desktop\oop2017s\inclass1\main.cpp
 	<gtest/gtest.h>
+	<iostream>
+	<string>
+	"Vector.h"
+
+1488787343 c:\users\posd\desktop\oop2017s\inclass1\vector.h
+	<string>
 

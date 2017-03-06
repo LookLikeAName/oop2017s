@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include <string>
-
+#include "Vector.h"
 using namespace std;
 int X(int num1, int num2);
 /*
@@ -61,7 +61,6 @@ TEST (testInnerProduct, Normal) {
 
 TEST (testInnerProduct, Normal1) {
     int a[3] = {0, 1, 1}, b[3] = {1, 1, 1};
-
     ASSERT_EQ(2 ,innerProduct(3, a, b));
 }
 
@@ -76,12 +75,44 @@ TEST (testInnerProduct, Abnormal1) {
 
     try {
         // if this fails, innerProduct is not doing its job
-        ASSERT_ANY_THROW(innerProduct(3 ,4, a, b));
+        innerProduct(3 ,4, a, b);
+        FAIL()<<"Should not be here!";
     } catch(string s) {
         // if this fails, innerProduct does not throw the expected exception
         ASSERT_EQ(string("wrong dim"),s);
     }
 }
 
+TEST (Vector, create)
+{
+    double a[2]={1,2};
+    Vector v(a, 2);
 
+    ASSERT_EQ(2,v.dim());
+    ASSERT_EQ(1,v.component(1));
+    ASSERT_EQ(2,v.component(2));
+}
 
+TEST (Vector, innerProduct){
+    double a[2]={1,2}, b[2]={3,4};
+    Vector v(a, 2),w(b, 2);
+
+    ASSERT_EQ(11 ,innerProduct(v,w));
+}
+
+TEST (Vector, innerProductEx){
+    double a[2]={1,2}, b[3]={3,4,5};
+    Vector v(a, 2),w(b, 3);
+    ASSERT_ANY_THROW(innerProduct(v,w));
+}
+
+TEST (Vector, innerProductExString){
+    double a[2]={1,2}, b[3]={3,4,5};
+    Vector v(a, 2),w(b, 3);
+    try {
+        innerProduct(v,w);
+        FAIL() << "should not be here!";
+    } catch(string s) {
+        ASSERT_EQ(string("wrong dim"), s);
+    }
+}

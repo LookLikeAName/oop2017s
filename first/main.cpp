@@ -38,3 +38,18 @@ TEST (test2, third) {
     ASSERT_EQ(std::string("hello"),s);
 }
 
+#include <iostream>
+
+class foo {
+public:
+    foo (int i) {}
+    void operator ()(int i) {std::cout << i << std::endl;}
+    void operator ()(int i, int j) {std::cout << i << " " << j << std::endl;}
+};
+
+TEST (foo, first) {
+    foo f(234);
+    f(1);
+    f(1,2);
+}
+
