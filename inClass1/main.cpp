@@ -116,3 +116,9 @@ TEST (Vector, innerProductExString){
         ASSERT_EQ(string("wrong dim"), s);
     }
 }
+TEST (Vector, destructor) {
+   double a[2]={1,2}, b[2]={3,4};
+    Vector v(a, 2),w(b, 2);
+    int i = 0;
+
+}

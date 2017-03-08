@@ -9,12 +9,14 @@ public:
     for (int i=0; i < d; ++i)
         v[i] = a[i];
   }
+  ~Vector() {delete [] v;}
   int dim() {
       return d;
   }
   double component (int dim){
       return v[dim-1];
   }
+private:
   int d;
   double *v;
 };
