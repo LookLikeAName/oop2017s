@@ -98,6 +98,9 @@ TEST (Vector, innerProduct){
     Vector v(a, 2),w(b, 2);
 
     ASSERT_EQ(11 ,innerProduct(v,w));
+    // testing if a correct copy constructor is provided
+    EXPECT_EQ(1,v.component(1));
+    EXPECT_EQ(2,v.component(2));
 }
 
 TEST (Vector, innerProductEx){
@@ -116,9 +119,14 @@ TEST (Vector, innerProductExString){
         ASSERT_EQ(string("wrong dim"), s);
     }
 }
-TEST (Vector, destructor) {
-   double a[2]={1,2}, b[2]={3,4};
-    Vector v(a, 2),w(b, 2);
-    int i = 0;
 
+int foo(int i, int j) {
+    return ++i+j++ -1;
+}
+
+TEST (foo, first) {
+    int x =2, y =3;
+    ASSERT_EQ(5,foo(x,y));
+    ASSERT_EQ(2,x);
+    ASSERT_EQ(3,y);
 }

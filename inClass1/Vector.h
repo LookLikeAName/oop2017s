@@ -9,6 +9,12 @@ public:
     for (int i=0; i < d; ++i)
         v[i] = a[i];
   }
+  Vector(Vector & vec){
+    d = vec.d;
+    v = new double [d];
+    for (int i=0; i < d; ++i)
+        v[i] = vec.v[i];
+  }
   ~Vector() {delete [] v;}
   int dim() {
       return d;
@@ -31,5 +37,6 @@ double innerProduct(Vector a, Vector b){
     }
     return result;
 }
+
 
 #endif // VECTOR_H_INCLUDED
