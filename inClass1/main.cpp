@@ -130,3 +130,34 @@ TEST (foo, first) {
     ASSERT_EQ(2,x);
     ASSERT_EQ(3,y);
 }
+
+//call by reference
+
+void swap(int &a,int &b){
+    int t=a;
+    a=b;
+    b=t;
+}
+TEST (swap, first) {
+    int i=3,j=4;
+    swap(i,j);
+    ASSERT_EQ(4,i);
+    ASSERT_EQ(3,j);
+}
+
+TEST (Vector, multiply) {
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    multiply(0.5,v);
+    ASSERT_EQ(0,v.component(1));
+    ASSERT_EQ(1,v.component(2));
+    ASSERT_EQ(1,v.component(3));
+}
+TEST (Vector, linearTransform){
+    double a[3]={1,1,3}, b[3]={0,1,1};
+    Vector v(a, 3),w(b, 3);
+    linearTransform(-1,w,v);
+    ASSERT_EQ(1,v.component(1));
+    ASSERT_EQ(0,v.component(2));
+    ASSERT_EQ(2,v.component(3));
+}

@@ -16,10 +16,12 @@ public:
         v[i] = vec.v[i];
   }
   ~Vector() {delete [] v;}
-  int dim() {
+  //constant member function
+  int dim() const {
       return d;
   }
-  double component (int dim){
+  double &component (int dim) const {
+
       return v[dim-1];
   }
 private:
@@ -27,7 +29,7 @@ private:
   double *v;
 };
 
-double innerProduct(Vector a, Vector b){
+double innerProduct(Vector &a, Vector &b){
     double result= 0;
     if(a.dim()!=b.dim()){
         throw std::string("wrong dim");
@@ -38,5 +40,14 @@ double innerProduct(Vector a, Vector b){
     return result;
 }
 
-
+void multiply(double c, Vector &v){
+    for(int i=1; i<=v.dim();i++){
+        v.component(i)=c*v.component(i);
+    }
+}
+void linearTransform(double c,const Vector &  v1,Vector &v2){
+    for(int i=1; i<=v1.dim();i++){
+        v2.component(i)=c*v1.component(i)+v2.component(i);
+    }
+}
 #endif // VECTOR_H_INCLUDED
