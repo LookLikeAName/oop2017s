@@ -161,3 +161,27 @@ TEST (Vector, linearTransform){
     ASSERT_EQ(0,v.component(2));
     ASSERT_EQ(2,v.component(3));
 }
+#include <vector>
+TEST (Matrix, First){
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    std::vector <Vector*> m;
+    m.push_back(0);
+    m.push_back(&v);
+    m.push_back(&w);
+    ASSERT_EQ(0,m[1]->component(1));
+    ASSERT_EQ(2,m[2]->component(2));
+    swapVector(m,1,2);
+    ASSERT_EQ(2,m[1]->component(2));
+    ASSERT_EQ(0,m[2]->component(1));
+}
+
+TEST (vector, intArray) {
+    int a[5] = {1,2,3,4,5};
+    std::vector<int> v(a,a+5);
+    ASSERT_EQ(a[3],v[3]);
+    v.push_back(6);
+    ASSERT_EQ(6,v[5]);
+    ASSERT_EQ(6,v.size());
+
+}

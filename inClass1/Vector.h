@@ -1,6 +1,7 @@
 #ifndef VECTOR_H_INCLUDED
 #define VECTOR_H_INCLUDED
 #include <string>
+#include <vector>
 class Vector {
 public:
   Vector(double a [], int dim) {
@@ -49,5 +50,11 @@ void linearTransform(double c,const Vector &  v1,Vector &v2){
     for(int i=1; i<=v1.dim();i++){
         v2.component(i)=c*v1.component(i)+v2.component(i);
     }
+}
+void swapVector(std::vector <Vector*> &m,int i,int j){
+    Vector* t = m[i];
+    m[i] = m[j];
+    m[j] = t;
+
 }
 #endif // VECTOR_H_INCLUDED
