@@ -55,6 +55,38 @@ void swapVector(std::vector <Vector*> &m,int i,int j){
     Vector* t = m[i];
     m[i] = m[j];
     m[j] = t;
+}
 
+void pivot(int r, std::vector<Vector *> & m) {
+    int i=r;
+    for (; i<=m.size(); ++i)
+        if (m[i]->component(r) != 0)
+            break;
+    if (i != r && i <= m.size())
+        swapVector(m, r, i);
+}
+
+void eliminateForward(int i, std::vector<Vector *> & m) {
+        for (int j=i+1; j <=m.size()-1; ++j)
+            linearTransform(-m[j]->component(i), *m[i], *m[j]);
+}
+
+void forward(std::vector<Vector *> & m) {
+    for (int i=1; i<=m.size()-1; ++i) {
+        pivot(i,m);
+        multiply(1/m[i]->component(i), *m[i]);
+        eliminateForward(i, m);
+    }
+}
+
+void backward(std::vector<Vector *> & m) {
+    for (int i = m.size()-1; i >= 1; --i)
+        for (int j = i-1; j >= 1; --j)
+            linearTransform(-m[j]->component(i),*m[i],*m[j]);
+}
+
+void GuassJordan(std::vector<Vector *> & m){
+    forward(m);
+    backward(m);
 }
 #endif // VECTOR_H_INCLUDED

@@ -34,6 +34,12 @@
 		</Compiler>
 		<Unit filename="Vector.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="utExp.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="utVector.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
