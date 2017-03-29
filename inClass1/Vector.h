@@ -25,12 +25,23 @@ public:
 
       return v[dim-1];
   }
+  void multiply(double c){
+        for(int i=1; i<=dim();i++){
+            component(i)=c*component(i);
+        }
+  }
+  // scalar alpha X plus Y: Y = aX+Y
+    void saxpy(double a,const Vector & x){
+    for(int i=1; i<=dim();i++){
+        component(i)=a*x.component(i)+component(i);
+    }
+}
 private:
   int d;
   double *v;
 };
 
-double innerProduct(Vector &a, Vector &b){
+double innerProduct(Vector const &a, Vector const &b){
     double result= 0;
     if(a.dim()!=b.dim()){
         throw std::string("wrong dim");

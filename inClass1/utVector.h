@@ -163,5 +163,27 @@ TEST (GaussJordan, first) {
     ASSERT_EQ(1,m[2]->component(3));
 }
 
+TEST(Vector, compnent) {
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    ASSERT_EQ(0, v.component(1));
+    v.component(1) = 100;
+    ASSERT_EQ(100, v.component(1));
 
+    Vector z(v);
+    ASSERT_EQ(100, z.component(1));
+
+}
+ TEST(Vector, multiply1) {
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    v.multiply(3);
+    ASSERT_EQ(6,v.component(2));
+ }
+ TEST(Vector, saxpy) {
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    v.saxpy(3, w);
+    ASSERT_EQ(6,v.component(1));
+ }
 #endif // UTVECTOR_H_INCLUDED
