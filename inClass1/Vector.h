@@ -21,6 +21,11 @@ public:
   int dim() const {
       return d;
   }
+
+  double &operator[] (int dim) const {
+      return v[dim-1];
+  }
+
   double &component (int dim) const {
 
       return v[dim-1];

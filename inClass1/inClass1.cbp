@@ -32,11 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Matrix.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Vector.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="utExp.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="utMatrix.h" />
 		<Unit filename="utVector.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
