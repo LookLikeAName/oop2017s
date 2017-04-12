@@ -35,5 +35,42 @@ TEST (Matrix, Assignment){
     ASSERT_EQ(100, n[1][1]);
 }
 
+TEST (Matrix, Swap){
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    Vector * vec[3] = {0,&v, &w};
+    Matrix m(vec,3);
+    m.swap(1, 2);
+
+    ASSERT_EQ(2, m[1][1]);
+    ASSERT_EQ(2, m[2][2]);
+}
+
+TEST (Matrix, pivot){
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    Vector * vec[3] = {0,&v, &w};
+    Matrix m(vec,3);
+    m.pivot(1);
+
+    ASSERT_EQ(2, m[1][1]);
+    ASSERT_EQ(2, m[2][2]);
+}
+
+TEST (Matrix, forward) {
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    Vector * vec[3] = {0,&v, &w};
+    Matrix m(vec,3);
+
+    m.forward();
+    ASSERT_EQ(1,m[1][1]);
+    ASSERT_EQ(1,m[1][2]);
+    ASSERT_EQ(3,m[1][3]);
+    ASSERT_EQ(0,m[2][1]);
+    ASSERT_EQ(1,m[2][2]);
+    ASSERT_EQ(1,m[2][3]);
+
+}
 
 #endif // UTMATRIX_H_INCLUDED

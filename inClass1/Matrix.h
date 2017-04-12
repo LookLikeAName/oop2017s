@@ -41,7 +41,32 @@ public:
         return *vs[i];
     }
 
-private:
+    void swap(int i, int j) {
+        Vector* t = vs[i];
+        vs[i] = vs[j];
+        vs[j] = t;
+
+    }
+    void pivot(int r) {
+        int i=r;
+        for (; i<=vs.size()-1; ++i)
+            if (vs[i]->component(r) != 0)
+                break;
+        if (i != r && i <= vs.size()-1)
+        swap(r, i);
+    }
+    void eliminateForward(int i) {
+        for (int j=i+1; j <=vs.size()-1; ++j)
+            (*this)[j].saxpy(-(*this)[j][i],(*this)[i]);
+    }
+    void forward() {
+        for (int i=1; i<=vs.size()-1; ++i) {
+            pivot(i);
+            (*this)[i].multiply(1/(*this)[i][i]);
+            eliminateForward(i);
+        }
+    }
+    private:
     std::vector <Vector*> vs;
 
 };

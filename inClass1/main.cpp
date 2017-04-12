@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 //#include "utExp.h"
-#include "utVector.h"
+//#include "utVector.h"
 #include "utMatrix.h"
 int main( int argc , char **argv )
 {
