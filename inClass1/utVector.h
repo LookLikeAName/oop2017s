@@ -179,11 +179,20 @@ TEST(Vector, compnent) {
     Vector v(a, 3),w(b, 3);
     v.multiply(3);
     ASSERT_EQ(6,v.component(2));
- }
- TEST(Vector, saxpy) {
+}
+
+TEST(Vector, saxpy) {
     double a[3]={0,2,2}, b[3]={2,2,6};
     Vector v(a, 3),w(b, 3);
     v.saxpy(3, w);
     ASSERT_EQ(6,v.component(1));
- }
+}
+
+TEST(Vector,outPut){
+    double a[3]={0,2,2}, b[3]={2,2,6};
+    Vector v(a, 3),w(b, 3);
+    std::string ans("[ 0 2 2 ]");
+    ASSERT_EQ(ans,v.toString());
+
+}
 #endif // UTVECTOR_H_INCLUDED

@@ -1,15 +1,16 @@
 # depslib dependency file v1.0
-1491978598 source:c:\users\posd\desktop\oop2017s\inclass1\main.cpp
+1492585074 source:c:\users\posd\desktop\oop2017s\inclass1\main.cpp
 	<gtest/gtest.h>
-	"utMatrix.h"
+	"utVector.h"
 
-1491807253 c:\users\posd\desktop\oop2017s\inclass1\vector.h
+1492585049 c:\users\posd\desktop\oop2017s\inclass1\vector.h
 	<string>
 	<vector>
+	<sstream>
 
 1490600968 c:\users\posd\desktop\oop2017s\inclass1\utexp.h
 
-1490770900 c:\users\posd\desktop\oop2017s\inclass1\utvector.h
+1492585177 c:\users\posd\desktop\oop2017s\inclass1\utvector.h
 	<string>
 	"Vector.h"
 	<vector>

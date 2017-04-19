@@ -2,6 +2,7 @@
 #define VECTOR_H_INCLUDED
 #include <string>
 #include <vector>
+#include <sstream>
 class Vector {
 public:
   Vector(double a [], int dim) {
@@ -41,6 +42,15 @@ public:
         component(i)=a*x.component(i)+component(i);
     }
 }
+
+    std::string toString(){
+        std::stringstream ss;
+        ss << "[ ";
+        for (int i=1; i<=dim();i++)
+            ss << (*this)[i] << " ";
+        ss << "]";
+        return ss.str();
+    }
 private:
   int d;
   double *v;
