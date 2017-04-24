@@ -195,4 +195,26 @@ TEST(Vector,outPut){
     ASSERT_EQ(ans,v.toString());
 
 }
+
+TEST(Vector,inPut){
+
+    std::string ans("[ 0 2 2 ]");
+    Vector v=stringToVector(ans);
+    EXPECT_EQ(3,v.dim());
+    EXPECT_EQ(0,v[1]);
+    EXPECT_EQ(2,v[2]);
+    EXPECT_EQ(2,v[3]);
+
+}
+
+TEST(Vector,inPut2){
+
+    std::string ans("[ 0 2 2 3 ]");
+    Vector v=stringToVector(ans);
+    EXPECT_EQ(4,v.dim());
+    EXPECT_EQ(0,v[1]);
+    EXPECT_EQ(2,v[2]);
+    EXPECT_EQ(2,v[3]);
+    EXPECT_EQ(3,v[4]);
+}
 #endif // UTVECTOR_H_INCLUDED

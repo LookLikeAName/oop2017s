@@ -11,7 +11,7 @@ public:
     for (int i=0; i < d; ++i)
         v[i] = a[i];
   }
-  Vector(Vector & vec){
+  Vector(Vector const & vec){
     d = vec.d;
     v = new double [d];
     for (int i=0; i < d; ++i)
@@ -115,4 +115,24 @@ void GuassJordan(std::vector<Vector *> & m){
     forward(m);
     backward(m);
 }
+
+Vector stringToVector(std::string const &s){
+    std::stringstream ss(s);
+    char c;
+    ss >> c;
+    std::string comps;
+    getline(ss,comps,']');
+    std::stringstream cs(comps);
+    std::string temd;
+    double vec [256];
+    int dim=0;
+    getline(cs,temd,' ');
+    while(getline(cs,temd,' '))
+    {
+       std::stringstream ts(temd);
+       ts >> vec[dim++];
+    }
+    return Vector(vec, dim);
+}
+
 #endif // VECTOR_H_INCLUDED
