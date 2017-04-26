@@ -43,14 +43,14 @@ public:
     }
 }
 
-    std::string toString(){
-        std::stringstream ss;
-        ss << "[ ";
-        for (int i=1; i<=dim();i++)
-            ss << (*this)[i] << " ";
-        ss << "]";
-        return ss.str();
-    }
+std::string toString(){
+    std::stringstream ss;
+    ss << "[ ";
+    for (int i=1; i<=dim();i++)
+        ss << (*this)[i] << " ";
+    ss << "]";
+    return ss.str();
+}
 private:
   int d;
   double *v;
@@ -115,24 +115,29 @@ void GuassJordan(std::vector<Vector *> & m){
     forward(m);
     backward(m);
 }
-
-Vector stringToVector(std::string const &s){
-    std::stringstream ss(s);
+std::string extractComponents(std::string const &s) {
+    std::stringstream ts(s);
     char c;
-    ss >> c;
-    std::string comps;
-    getline(ss,comps,']');
+    ts>>c;
+    std::string components;
+    getline(ts,components,']');
+    return components;
+}
+Vector stringToVector(std::string const &s){
+    std::string comps = extractComponents(s);
     std::stringstream cs(comps);
     std::string temd;
     double vec [256];
     int dim=0;
-    getline(cs,temd,' ');
     while(getline(cs,temd,' '))
     {
        std::stringstream ts(temd);
-       ts >> vec[dim++];
+       if(ts >> vec[dim])
+          dim++;
     }
     return Vector(vec, dim);
 }
+
+
 
 #endif // VECTOR_H_INCLUDED

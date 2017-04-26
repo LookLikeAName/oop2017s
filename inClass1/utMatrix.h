@@ -73,4 +73,26 @@ TEST (Matrix, forward) {
 
 }
 
+/*
+TEST (Matrix, MatrixFromString) {
+    std::string s("[0 2 2] \n [2 2 6] \n");
+    Matrix m = MatrixFromString(s);
+
+    EXPECT_EQ(0, m[1][1]);
+    EXPECT_EQ(2, m[1][2]);
+    EXPECT_EQ(2, m[1][3]);
+
+    EXPECT_EQ(2, m[2][1]);
+    EXPECT_EQ(2, m[2][2]);
+    EXPECT_EQ(6, m[2][3]);
+
+    EXPECT_EQ(2, m[2][1]);
+    EXPECT_EQ(2, m[2][2]);
+    EXPECT_EQ(6, m[2][3]);
+
+    EXPECT_EQ(2, m(2,1));
+    EXPECT_EQ(2, m(2,2));
+    EXPECT_EQ(6, m(2,3));
+}
+*/
 #endif // UTMATRIX_H_INCLUDED

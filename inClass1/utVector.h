@@ -209,7 +209,7 @@ TEST(Vector,inPut){
 
 TEST(Vector,inPut2){
 
-    std::string ans("[ 0 2 2 3 ]");
+    std::string ans("   [      0 2 2 3]");
     Vector v=stringToVector(ans);
     EXPECT_EQ(4,v.dim());
     EXPECT_EQ(0,v[1]);

@@ -3,14 +3,14 @@
 	<gtest/gtest.h>
 	"utVector.h"
 
-1493025383 c:\users\posd\desktop\oop2017s\inclass1\vector.h
+1493193323 c:\users\posd\desktop\oop2017s\inclass1\vector.h
 	<string>
 	<vector>
 	<sstream>
 
 1490600968 c:\users\posd\desktop\oop2017s\inclass1\utexp.h
 
-1493020775 c:\users\posd\desktop\oop2017s\inclass1\utvector.h
+1493193419 c:\users\posd\desktop\oop2017s\inclass1\utvector.h
 	<string>
 	"Vector.h"
 	<vector>
