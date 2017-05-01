@@ -2,5 +2,8 @@
 <CodeBlocks_workspace_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveProject path="Polygon/Polygon.cbp" />
+<<<<<<< HEAD
 	<PreferredTarget name="Debug" />
+=======
+>>>>>>> f58f9c57a9d0c957dc8b4540f0ab45b260308098
 </CodeBlocks_workspace_layout_file>

@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+<<<<<<< HEAD
 		<Unit filename="Polygon.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -39,6 +40,9 @@
 		<Unit filename="utPolygon.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+=======
+		<Unit filename="main.cpp" />
+>>>>>>> f58f9c57a9d0c957dc8b4540f0ab45b260308098
 		<Extensions>
 			<code_completion />
 			<envvars />
