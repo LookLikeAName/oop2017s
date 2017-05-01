@@ -15,22 +15,22 @@ public:
     // deep copy trio
     Matrix(Matrix & m){
         vs.push_back(0);
-        for(int i = 1 ; i < vs.size() ; i++){
+        for(unsigned i = 1 ; i < vs.size() ; i++){
             vs.push_back( new Vector(*m.vs[i]));
         }
     }
     ~Matrix() {
-        for (int i=0; i< vs.size(); ++i)
+        for (unsigned i=0; i< vs.size(); ++i)
             delete vs[i];
     }
 
     Matrix &operator = (Matrix const & m){
         if (this != &m) {
-            for (int i=0; i< vs.size(); ++i)
+            for (unsigned i=0; i< vs.size(); ++i)
                 delete vs[i];
             vs.clear();
             vs.push_back(0);
-            for(int i = 1 ; i < m.vs.size() ; i++){
+            for(unsigned i = 1 ; i < m.vs.size() ; i++){
                 vs.push_back( new Vector(*m.vs[i]));
             }
         }
@@ -47,20 +47,20 @@ public:
         vs[j] = t;
 
     }
-    void pivot(int r) {
-        int i=r;
+    void pivot(unsigned r) {
+        unsigned i=r;
         for (; i<=vs.size()-1; ++i)
             if (vs[i]->component(r) != 0)
                 break;
         if (i != r && i <= vs.size()-1)
         swap(r, i);
     }
-    void eliminateForward(int i) {
-        for (int j=i+1; j <=vs.size()-1; ++j)
+    void eliminateForward(unsigned i) {
+        for (unsigned j=i+1; j <=vs.size()-1; ++j)
             (*this)[j].saxpy(-(*this)[j][i],(*this)[i]);
     }
     void forward() {
-        for (int i=1; i<=vs.size()-1; ++i) {
+        for (unsigned i=1; i<=vs.size()-1; ++i) {
             pivot(i);
             (*this)[i].multiply(1/(*this)[i][i]);
             eliminateForward(i);

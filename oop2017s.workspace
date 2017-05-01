@@ -4,5 +4,6 @@
 		<Project filename="first/first.cbp" />
 		<Project filename="inClass1/inClass1.cbp" />
 		<Project filename="IO/IO.cbp" />
+		<Project filename="Polygon/Polygon.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
