@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
-//#include "utExp.h"
-#include "utVector.h"
-#include "utMatrix.h"
+#include "utPolygon.h"
+
 int main( int argc , char **argv )
 {
     testing :: InitGoogleTest( &argc , argv ) ;

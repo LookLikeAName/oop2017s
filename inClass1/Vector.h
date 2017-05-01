@@ -51,10 +51,20 @@ std::string toString(){
     ss << "]";
     return ss.str();
 }
+
+
 private:
   int d;
   double *v;
 };
+
+bool operator == (Vector const & u, Vector const & v) {
+    for(int i = 1; i <= u.dim(); i++) {
+        if(u[i] != v[i])
+            return false;
+    }
+    return true;
+}
 
 double innerProduct(Vector const &a, Vector const &b){
     double result= 0;
@@ -83,8 +93,8 @@ void swapVector(std::vector <Vector*> &m,int i,int j){
     m[j] = t;
 }
 
-void pivot(int r, std::vector<Vector *> & m) {
-    int i=r;
+void pivot(unsigned r, std::vector<Vector *> & m) {
+    unsigned i=r;
     for (; i<=m.size(); ++i)
         if (m[i]->component(r) != 0)
             break;
@@ -92,13 +102,13 @@ void pivot(int r, std::vector<Vector *> & m) {
         swapVector(m, r, i);
 }
 
-void eliminateForward(int i, std::vector<Vector *> & m) {
-        for (int j=i+1; j <=m.size()-1; ++j)
+void eliminateForward(unsigned i, std::vector<Vector *> & m) {
+        for (unsigned j=i+1; j <=m.size()-1; ++j)
             linearTransform(-m[j]->component(i), *m[i], *m[j]);
 }
 
 void forward(std::vector<Vector *> & m) {
-    for (int i=1; i<=m.size()-1; ++i) {
+    for (unsigned i=1; i<=m.size()-1; ++i) {
         pivot(i,m);
         multiply(1/m[i]->component(i), *m[i]);
         eliminateForward(i, m);
