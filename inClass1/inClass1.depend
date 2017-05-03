@@ -4,14 +4,15 @@
 	"utVector.h"
 	"utMatrix.h"
 
-1493626691 c:\users\posd\desktop\oop2017s\inclass1\vector.h
+1493795038 c:\users\posd\desktop\oop2017s\inclass1\vector.h
 	<string>
 	<vector>
 	<sstream>
+	<cmath>
 
 1490600968 c:\users\posd\desktop\oop2017s\inclass1\utexp.h
 
-1493193419 c:\users\posd\desktop\oop2017s\inclass1\utvector.h
+1493794733 c:\users\posd\desktop\oop2017s\inclass1\utvector.h
 	<string>
 	"Vector.h"
 	<vector>
@@ -19,7 +20,7 @@
 1493775068 c:\users\posd\desktop\oop2017s\inclass1\utmatrix.h
 	"Matrix.h"
 
-1493774686 c:\users\posd\desktop\oop2017s\inclass1\matrix.h
+1493793714 c:\users\posd\desktop\oop2017s\inclass1\matrix.h
 	<vector>
 	"Vector.h"
 

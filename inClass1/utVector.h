@@ -30,6 +30,7 @@ TEST (Vector, minus){
     Vector x=v-w;
     EXPECT_EQ(-2,x[1]);
     EXPECT_EQ(-2,x[2]);
+    EXPECT_NEAR(2*sqrt(2),x.length(),0.00001);
 }
 
 TEST (Vector, innerProductEx){
@@ -224,5 +225,11 @@ TEST(Vector,inPut2){
     EXPECT_EQ(2,v[2]);
     EXPECT_EQ(2,v[3]);
     EXPECT_EQ(3,v[4]);
+}
+
+TEST(VectorArea,triangle){
+    double a[2] = {1,0}, b[2] = {1,1}, c[2] = {0, 0};
+    Vector u(a, 2), v(b, 2), w(c, 2);
+    EXPECT_NEAR(0.5,VectorArea(u,v,w),0.00001);
 }
 #endif // UTVECTOR_H_INCLUDED

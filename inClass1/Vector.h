@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <cmath>
 class Vector {
 public:
   Vector(double a [], int dim) {
@@ -41,6 +42,13 @@ public:
     for(int i=1; i<=dim();i++){
         component(i)=a*x.component(i)+component(i);
     }
+    }
+    double length(){
+        double l=0;
+        for(int i=1;i<=dim();++i){
+            l+=component(i)*component(i);
+        }
+        return sqrt(l);
 }
 
 std::string toString(){
@@ -66,7 +74,14 @@ bool operator == (Vector const & u, Vector const & v) {
     return true;
 }
 
-Vector operator -(Vector const &u,Vector const &v){}
+Vector operator -(Vector const &u,Vector const &v){
+    Vector r=u;
+    for(int i=1;i<=r.dim();i++){
+        r[i]-=v[i];
+    }
+    return r;
+ }
+
 
 double innerProduct(Vector const &a, Vector const &b){
     double result= 0;
@@ -150,6 +165,14 @@ Vector stringToVector(std::string const &s){
     return Vector(vec, dim);
 }
 
+double  VectorArea (Vector const &u,Vector const &v,Vector const &w){
+    double a=(v-u).length();
+    double b=(w-v).length();
+    double c=(u-w).length();
+    double s=(a+b+c)/2;
 
+    return sqrt(s*(s-a)*(s-b)*(s-c));
+
+}
 
 #endif // VECTOR_H_INCLUDED

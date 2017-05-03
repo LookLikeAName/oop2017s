@@ -66,6 +66,9 @@ public:
             eliminateForward(i);
         }
     }
+    int nRows() const {
+        return vs.size()-1;
+    }
     private:
     std::vector <Vector*> vs;
 

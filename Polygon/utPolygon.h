@@ -5,7 +5,7 @@
 #include "Polygon.h"
 #include <cmath>
 
-TEST(CreatePolygon, order1) {
+TEST(Polygon, construct) {
     double a[2] = {1,0}, b[2] = {1,1}, c[2] = {0, 0};
     Vector u(a, 2), v(b, 2), w(c, 2);
     // hmmm... maybe we need to fix Matrix
@@ -17,7 +17,7 @@ TEST(CreatePolygon, order1) {
     ASSERT_EQ(w, triangle.vertex(3));
 }
 
-TEST(CreatePolygon, perimeter) {
+TEST(Polygon, perimeter) {
     double a[2] = {1,0}, b[2] = {1,1}, c[2] = {0, 0};
     Vector u(a, 2), v(b, 2), w(c, 2);
     Vector *p[3] = { &u, &v, &w};
@@ -26,6 +26,14 @@ TEST(CreatePolygon, perimeter) {
     ASSERT_EQ(1+1+sqrt(2), triangle.perimeter());
 }
 
+TEST(Polygon,area){
+ double a[2] = {1,0}, b[2] = {1,1}, c[2] = {0, 0};
+    Vector u(a, 2), v(b, 2), w(c, 2);
+    Vector *p[3] = { &u, &v, &w};
+    Polygon triangle(p, 3);
+
+    ASSERT_EQ(1.0/2.0,triangle.area());
+}
 
 
 #endif // UTPOLYGON_H_INCLUDED
