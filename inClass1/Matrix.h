@@ -8,7 +8,7 @@ class Matrix{
 public:
     Matrix(Vector * vec[], int n){
         vs.push_back(0);
-        for(int i = 1 ; i < n ; i++){
+        for(int i = 0 ; i < n ; i++){
             vs.push_back(new Vector(*vec[i]));
         }
     }

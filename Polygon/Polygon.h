@@ -12,6 +12,10 @@ public:
     Vector & vertex(int i) const {
         return vertices[i];
     }
+
+    double perimeter() const{
+
+    }
 private:
     Matrix vertices;
 };

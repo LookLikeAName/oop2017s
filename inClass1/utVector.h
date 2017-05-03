@@ -24,6 +24,14 @@ TEST (Vector, innerProduct){
     EXPECT_EQ(2,v.component(2));
 }
 
+TEST (Vector, minus){
+    double a[2]={1,2}, b[2]={3,4};
+    Vector v(a, 2),w(b, 2);
+    Vector x=v-w;
+    EXPECT_EQ(-2,x[1]);
+    EXPECT_EQ(-2,x[2]);
+}
+
 TEST (Vector, innerProductEx){
     double a[2]={1,2}, b[3]={3,4,5};
     Vector v(a, 2),w(b, 3);

@@ -3,19 +3,20 @@
 	<gtest/gtest.h>
 	"utPolygon.h"
 
-1493626873 c:\users\posd\desktop\oop2017s\polygon\utpolygon.h
+1493775771 c:\users\posd\desktop\oop2017s\polygon\utpolygon.h
 	"../inClass1/Vector.h"
 	"Polygon.h"
+	<cmath>
 
-1493626691 c:\users\posd\desktop\oop2017s\inclass1\vector.h
+1493776950 c:\users\posd\desktop\oop2017s\inclass1\vector.h
 	<string>
 	<vector>
 	<sstream>
 
-1493625678 c:\users\posd\desktop\oop2017s\polygon\polygon.h
+1493784527 c:\users\posd\desktop\oop2017s\polygon\polygon.h
 	"../inClass1/Matrix.h"
 
-1493626804 c:\users\posd\desktop\oop2017s\inclass1\matrix.h
+1493774686 c:\users\posd\desktop\oop2017s\inclass1\matrix.h
 	<vector>
 	"Vector.h"
 

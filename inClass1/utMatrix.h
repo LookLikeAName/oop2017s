@@ -6,8 +6,8 @@
 TEST (Matrix, Constructor){
     double a[3]={0,2,2}, b[3]={2,2,6};
     Vector v(a, 3),w(b, 3);
-    Vector * vec[3] = {0,&v, &w};
-    Matrix m(vec,3);
+    Vector * vec[2] = {&v, &w};
+    Matrix m(vec,2);
 
     ASSERT_EQ(0,m[1][1]);
     ASSERT_EQ(2,m[2][2]);
@@ -21,9 +21,9 @@ TEST (Matrix, Constructor){
 TEST (Matrix, Assignment){
     double a[3]={0,2,2}, b[3]={2,2,6};
     Vector v(a, 3),w(b, 3);
-    Vector * vec[3] = {0,&v, &w};
-    Matrix m(vec, 3);
-    Matrix n(vec, 3);
+    Vector * vec[2] = {&v, &w};
+    Matrix m(vec, 2);
+    Matrix n(vec, 2);
 
     ASSERT_EQ(0,m[1][1]);
     ASSERT_EQ(2,m[2][2]);
@@ -38,8 +38,8 @@ TEST (Matrix, Assignment){
 TEST (Matrix, Swap){
     double a[3]={0,2,2}, b[3]={2,2,6};
     Vector v(a, 3),w(b, 3);
-    Vector * vec[3] = {0,&v, &w};
-    Matrix m(vec,3);
+    Vector * vec[2] = {&v, &w};
+    Matrix m(vec,2);
     m.swap(1, 2);
 
     ASSERT_EQ(2, m[1][1]);
@@ -49,8 +49,8 @@ TEST (Matrix, Swap){
 TEST (Matrix, pivot){
     double a[3]={0,2,2}, b[3]={2,2,6};
     Vector v(a, 3),w(b, 3);
-    Vector * vec[3] = {0,&v, &w};
-    Matrix m(vec,3);
+    Vector * vec[2] = {&v, &w};
+    Matrix m(vec,2);
     m.pivot(1);
 
     ASSERT_EQ(2, m[1][1]);
@@ -60,8 +60,8 @@ TEST (Matrix, pivot){
 TEST (Matrix, forward) {
     double a[3]={0,2,2}, b[3]={2,2,6};
     Vector v(a, 3),w(b, 3);
-    Vector * vec[3] = {0,&v, &w};
-    Matrix m(vec,3);
+    Vector * vec[2] = {&v, &w};
+    Matrix m(vec,2);
 
     m.forward();
     ASSERT_EQ(1,m[1][1]);

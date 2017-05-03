@@ -66,6 +66,8 @@ bool operator == (Vector const & u, Vector const & v) {
     return true;
 }
 
+Vector operator -(Vector const &u,Vector const &v){}
+
 double innerProduct(Vector const &a, Vector const &b){
     double result= 0;
     if(a.dim()!=b.dim()){
