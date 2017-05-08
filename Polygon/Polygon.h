@@ -22,8 +22,11 @@ public:
         return p;
     }
     double area() const{
-        double a=0;
-
+        double area=0;
+        for(int i=2;i<vertices.nRows();i++){
+           area+=VectorArea(vertices[1],vertices[i],vertices[i+1]);
+        }
+        return area;
     }
 private:
     Matrix vertices;
