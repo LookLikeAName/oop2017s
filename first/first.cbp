@@ -37,6 +37,9 @@
 			<Add library="../googleTest/codeblocks-mingw/libgtest.a" />
 		</Linker>
 		<Unit filename="main.cpp" />
+		<Unit filename="utsort.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
