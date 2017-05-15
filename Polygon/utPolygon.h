@@ -33,7 +33,7 @@ TEST(Polygon,area){
     Vector *p[3] = { &u, &v, &w};
     Polygon triangle(p, 3);
 
-    ASSERT_EQ(1.0/2.0,triangle.area());
+    ASSERT_NEAR(1.0/2.0,triangle.area(), 0.00001);
 }
 TEST(Polygon,areaSquare){
     double a[2] = {1, 0}, b[2] = {1, 1}, c[2] = {0, 1},d[2] = {0, 0};
@@ -57,7 +57,7 @@ TEST(Polygon, notOrder){
     double a[2] = {1, 1}, b[2] = {0, 2}, c[2] = {0, 0},d[2] = {1, 0};
     Vector u(b, 2), v(a, 2), w(c, 2), x(d, 2);
     Vector *p[4] = { &u, &v, &w, &x};
-    Polygon square2(p, 4);
+    Polygon square2 = createConvexPolygon(p, 4);
 
     EXPECT_NEAR( 1.5, square2.area(), 0.00001);
 }

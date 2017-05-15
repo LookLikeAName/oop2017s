@@ -24,6 +24,17 @@ public:
       return d;
   }
 
+  Vector &operator= (Vector const & vec){
+    delete [] v;
+    d = vec.d;
+    v = new double [vec.d];
+    for (int i=0; i < vec.d; ++i)
+        v[i] = vec.v[i];
+
+    return *this;
+
+  }
+
   double &operator[] (int dim) const {
       return v[dim-1];
   }
@@ -81,6 +92,14 @@ Vector operator -(Vector const &u,Vector const &v){
     }
     return r;
  }
+
+Vector operator +(Vector const &u,Vector const &v){
+    Vector r=u;
+    for(int i=1;i<=r.dim();i++){
+        r[i]+=v[i];
+    }
+    return r;
+}
 
 
 double innerProduct(Vector const &a, Vector const &b){
@@ -174,5 +193,12 @@ double  VectorArea (Vector const &u,Vector const &v,Vector const &w){
     return sqrt(s*(s-a)*(s-b)*(s-c));
 
 }
-
+Vector centroid(Vector* vecs[], int n){
+    Vector c = *vecs[0];
+    for(int i = 1; i < n; ++i){
+        c = c + *vecs[i];
+    }
+    c.multiply(1.0 / n);
+    return c;
+}
 #endif // VECTOR_H_INCLUDED

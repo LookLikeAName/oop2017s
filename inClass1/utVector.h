@@ -232,4 +232,14 @@ TEST(VectorArea,triangle){
     Vector u(a, 2), v(b, 2), w(c, 2);
     EXPECT_NEAR(0.5,VectorArea(u,v,w),0.00001);
 }
+
+TEST(Vector, centroid){
+    double a[2] = {1, 1}, b[2] = {0, 2}, c[2] = {0, 0},d[2] = {1, 0};
+    Vector u(b, 2), v(a, 2), w(c, 2), x(d, 2);
+    Vector *p[4] = { &u, &v, &w, &x};
+    Vector cent =centroid(p, 4);
+
+    EXPECT_NEAR(0.5, cent[1], 0.0001);
+    EXPECT_NEAR(0.75, cent[2], 0.0001);
+}
 #endif // UTVECTOR_H_INCLUDED

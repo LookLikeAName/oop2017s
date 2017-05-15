@@ -32,4 +32,11 @@ private:
     Matrix vertices;
 };
 
+Polygon createConvexPolygon(Vector* vecs[], int n){
+    Vector c = centroid(vecs, n);
+    Vector ref = *vecs[0] - c;
+    std::sort(vecs, vecs + n, IncreasingByAngleToRefVector(c, ref));
+    return Polygon(vecs, n);
+}
+
 #endif // POLYGON_H_INCLUDED
