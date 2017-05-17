@@ -13,7 +13,7 @@ public:
         }
     }
     // deep copy trio
-    Matrix(Matrix & m){
+    Matrix(Matrix const & m){
         vs.push_back(0);
         for(unsigned i = 1 ; i < vs.size() ; i++){
             vs.push_back( new Vector(*m.vs[i]));

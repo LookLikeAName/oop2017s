@@ -54,7 +54,7 @@ public:
         component(i)=a*x.component(i)+component(i);
     }
     }
-    double length(){
+    double length() const{
         double l=0;
         for(int i=1;i<=dim();++i){
             l+=component(i)*component(i);
@@ -200,5 +200,12 @@ Vector centroid(Vector* vecs[], int n){
     }
     c.multiply(1.0 / n);
     return c;
+}
+double angle(Vector const &u, Vector const &v){
+    double a = acos(innerProduct(u, v)/(u.length()*v.length()))*180/3.14159;
+    if(u[1]*v[2]-u[2]*v[1]<0)
+        a=360-a;
+    return a;
+
 }
 #endif // VECTOR_H_INCLUDED

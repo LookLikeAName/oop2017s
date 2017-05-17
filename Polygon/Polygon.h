@@ -2,13 +2,14 @@
 #define POLYGON_H_INCLUDED
 
 #include "../inClass1/Matrix.h"
-
+#include <algorithm>
 class Polygon {
 public:
     Polygon(Vector * a[], int numberOfVertices)
     :vertices(a, numberOfVertices) // constructor initialization
     {}
-
+    Polygon(Polygon const &p)
+     :vertices(p.vertices){}
     Vector & vertex(int i) const {
         return vertices[i];
     }
@@ -31,7 +32,16 @@ public:
 private:
     Matrix vertices;
 };
-
+class IncreasingByAngleToRefVector{
+public:
+    IncreasingByAngleToRefVector(Vector const &cV,Vector const &refV)
+    :c(cV),ref(refV){}
+    bool operator()(Vector * u,Vector * v){
+        return angle(*u-c, ref)<angle(*v-c, ref);
+    }
+    Vector c;
+    Vector ref;
+};
 Polygon createConvexPolygon(Vector* vecs[], int n){
     Vector c = centroid(vecs, n);
     Vector ref = *vecs[0] - c;

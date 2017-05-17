@@ -242,4 +242,11 @@ TEST(Vector, centroid){
     EXPECT_NEAR(0.5, cent[1], 0.0001);
     EXPECT_NEAR(0.75, cent[2], 0.0001);
 }
+
+TEST(Vector, angle){
+    double a[2] = {1, 0},b[2] ={1,1}, c[2] = {1, -1};
+    Vector u(a,2), v(b,2), w(c,2);
+    EXPECT_NEAR(45.0,angle(u, v),0.0001);
+    EXPECT_NEAR(315.0,angle(u, w),0.0001);
+}
 #endif // UTVECTOR_H_INCLUDED
