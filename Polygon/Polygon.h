@@ -13,18 +13,20 @@ public:
     Vector & vertex(int i) const {
         return vertices[i];
     }
-
+    int numberOfVertices ()const{
+        return vertices.nRows();
+    }
     double perimeter() const{
         double p=0;
-        for(int i=1;i<vertices.nRows();i++){
+        for(int i=1;i<numberOfVertices();i++){
             p+=(vertices[i+1]-vertices[i]).length();
         }
-        p+=(vertices[vertices.nRows()]-vertices[1]).length();
+        p+=(vertices[numberOfVertices()]-vertices[1]).length();
         return p;
     }
     double area() const{
         double area=0;
-        for(int i=2;i<vertices.nRows();i++){
+        for(int i=2;i<numberOfVertices();i++){
            area+=VectorArea(vertices[1],vertices[i],vertices[i+1]);
         }
         return area;
@@ -37,7 +39,7 @@ public:
     IncreasingByAngleToRefVector(Vector const &cV,Vector const &refV)
     :c(cV),ref(refV){}
     bool operator()(Vector * u,Vector * v){
-        return angle(*u-c, ref)<angle(*v-c, ref);
+        return angle(ref, *u-c)<angle(ref, *v-c);
     }
     Vector c;
     Vector ref;

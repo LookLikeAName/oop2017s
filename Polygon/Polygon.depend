@@ -3,7 +3,7 @@
 	<gtest/gtest.h>
 	"utPolygon.h"
 
-1495004279 c:\users\posd\desktop\oop2017s\polygon\utpolygon.h
+1495435589 c:\users\posd\desktop\oop2017s\polygon\utpolygon.h
 	"../inClass1/Vector.h"
 	"Polygon.h"
 	<cmath>
@@ -14,7 +14,7 @@
 	<sstream>
 	<cmath>
 
-1495010137 c:\users\posd\desktop\oop2017s\polygon\polygon.h
+1495437171 c:\users\posd\desktop\oop2017s\polygon\polygon.h
 	"../inClass1/Matrix.h"
 	<algorithm>
 

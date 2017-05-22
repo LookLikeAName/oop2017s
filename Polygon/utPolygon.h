@@ -60,5 +60,16 @@ TEST(Polygon, notOrder){
     Polygon square2 = createConvexPolygon(p, 4);
 
     EXPECT_NEAR( 1.5, square2.area(), 0.00001);
+    EXPECT_NEAR( u[1], square2.vertex(1)[1],0.00001);
+    EXPECT_NEAR( u[2], square2.vertex(1)[2],0.00001);
+    EXPECT_NEAR( w[1], square2.vertex(2)[1],0.00001);
+    EXPECT_NEAR( w[2], square2.vertex(2)[2],0.00001);
+    EXPECT_NEAR( x[1], square2.vertex(3)[1],0.00001);
+    EXPECT_NEAR( x[2], square2.vertex(3)[2],0.00001);
+    EXPECT_NEAR( v[1], square2.vertex(4)[1],0.00001);
+    EXPECT_NEAR( v[2], square2.vertex(4)[2],0.00001);
+
 }
+
+
 #endif // UTPOLYGON_H_INCLUDED
