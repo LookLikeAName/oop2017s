@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1495607370 source:c:\users\posd\desktop\oop2017s\shape\main.cpp
+	<gtest/gtest.h>
+	"utShape.h"
+
+1495608501 c:\users\posd\desktop\oop2017s\shape\utshape.h
+	"../Polygon/Polygon.h"
+	"Shape.h"
+
+1495608136 c:\users\posd\desktop\oop2017s\polygon\polygon.h
+	"../inClass1/Matrix.h"
+	<algorithm>
+
+1495004206 c:\users\posd\desktop\oop2017s\inclass1\matrix.h
+	<vector>
+	"Vector.h"
+
+1495003951 c:\users\posd\desktop\oop2017s\inclass1\vector.h
+	<string>
+	<vector>
+	<sstream>
+	<cmath>
+
+1495609229 c:\users\posd\desktop\oop2017s\shape\shape.h
+	<string>
+	<sstream>
+	"../Polygon/Polygon.h"
+

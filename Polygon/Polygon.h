@@ -31,6 +31,9 @@ public:
         }
         return area;
     }
+    std::string name() const{
+        return std::string("polygon");
+    }
 private:
     Matrix vertices;
 };
