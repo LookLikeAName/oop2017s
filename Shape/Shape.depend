@@ -3,11 +3,13 @@
 	<gtest/gtest.h>
 	"utShape.h"
 
-1495608501 c:\users\posd\desktop\oop2017s\shape\utshape.h
+1496213270 c:\users\posd\desktop\oop2017s\shape\utshape.h
 	"../Polygon/Polygon.h"
 	"Shape.h"
+	"printShape.h"
 
-1495608136 c:\users\posd\desktop\oop2017s\polygon\polygon.h
+1496212743 c:\users\posd\desktop\oop2017s\polygon\polygon.h
+	"../Shape/Shape.h"
 	"../inClass1/Matrix.h"
 	<algorithm>
 
@@ -21,8 +23,12 @@
 	<sstream>
 	<cmath>
 
-1495609229 c:\users\posd\desktop\oop2017s\shape\shape.h
+1496213222 c:\users\posd\desktop\oop2017s\shape\shape.h
 	<string>
 	<sstream>
+	"../inClass1/Vector.h"
+
+1496214229 c:\users\posd\desktop\oop2017s\shape\printshape.h
 	"../Polygon/Polygon.h"
+	"Shape.h"
 

@@ -2,6 +2,7 @@
 #define UTSHAPE_H_INCLUDED
 #include "../Polygon/Polygon.h"
 #include "Shape.h"
+#include "printShape.h"
 TEST(shape, printPolygon)
 {
     double a[2] = {1, 1}, b[2] = {0, 1}, c[2] = {0, 0},d[2] = {1, 0};

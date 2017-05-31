@@ -2,9 +2,16 @@
 #define SHAPE_H_INCLUDED
 #include <string>
 #include <sstream>
-#include "../Polygon/Polygon.h"
+#include "../inClass1/Vector.h"
 const double PI=3.14159;
-class Circle
+class Shape
+{
+public:
+    virtual std::string name() const = 0;
+    virtual double area() const = 0;
+    virtual double perimeter() const = 0;
+};
+class Circle: public Shape
 {
 public:
     Circle(Vector const &center, double radius):c(center),r(radius){}
@@ -21,21 +28,7 @@ private:
     Vector c;
     double r;
 };
-std::string printShape (Polygon const &p)
-{
-    std::stringstream ss;
-    ss << "name:" << p.name() << ", area= " << p.area()
-       << ", perimeter= " << p.perimeter();
-    return ss.str();
-}
 
-std::string printShape (Circle const &p)
-{
-    std::stringstream ss;
-    ss << "name:" << p.name() << ", area= " << p.area()
-       << ", perimeter= " << p.perimeter();
-    return ss.str();
-}
 
 
 #endif // SHAPE_H_INCLUDED

@@ -1,9 +1,11 @@
 #ifndef POLYGON_H_INCLUDED
 #define POLYGON_H_INCLUDED
 
+#include "../Shape/Shape.h"
 #include "../inClass1/Matrix.h"
 #include <algorithm>
-class Polygon {
+class Polygon: public Shape
+ {
 public:
     Polygon(Vector * a[], int numberOfVertices)
     :vertices(a, numberOfVertices) // constructor initialization
