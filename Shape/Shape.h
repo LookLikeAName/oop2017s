@@ -29,6 +29,6 @@ private:
     double r;
 };
 
-
+bool areaGreater (Shape * a, Shape *b) {return a->area() > b->area(); }
 
 #endif // SHAPE_H_INCLUDED

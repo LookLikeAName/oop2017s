@@ -12,4 +12,12 @@ std::string printShape (Shape const &p)
 }
 
 
+std::string printShape (Shape const *p)
+{
+    std::stringstream ss;
+    ss << "name:" << p->name() << ", area= " << p->area()
+       << ", perimeter= " << p->perimeter();
+    return ss.str();
+}
+
 #endif // PRINTSHAPE_H_INCLUDED
