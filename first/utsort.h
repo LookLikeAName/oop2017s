@@ -110,4 +110,26 @@ TEST (Bubble, DecreasingByDistanceToD){
     ASSERT_EQ(5, a[4]);
 }
 
+TEST (Bubble, increasingLambda){
+    int a[5]= {5,2,43,6,9};
+    bubble (a, 5, [](int a, int b){return a < b;});
+
+    ASSERT_EQ(2, a[0]);
+    ASSERT_EQ(5, a[1]);
+    ASSERT_EQ(6, a[2]);
+    ASSERT_EQ(9, a[3]);
+    ASSERT_EQ(43, a[4]);
+}
+
+TEST (Bubble, DecreasingByDistanceToNLambda){
+    int a[5]= {5,2,43,6,9};
+    int n = 5;
+    bubble (a, 5, [n](int a, int b){return abs(a-n) > abs(b-n);});
+
+    ASSERT_EQ(43, a[0]);
+    ASSERT_EQ(9, a[1]);
+    ASSERT_EQ(2, a[2]);
+    ASSERT_EQ(6, a[3]);
+    ASSERT_EQ(5, a[4]);
+}
 #endif // UTSORT_H_INCLUDED

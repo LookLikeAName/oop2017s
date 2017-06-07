@@ -52,7 +52,8 @@ public:
 Polygon createConvexPolygon(Vector* vecs[], int n){
     Vector c = centroid(vecs, n);
     Vector ref = *vecs[0] - c;
-    std::sort(vecs, vecs + n, IncreasingByAngleToRefVector(c, ref));
+    //std::sort(vecs, vecs + n, IncreasingByAngleToRefVector(c, ref));
+    std::sort(vecs, vecs + n, [&c,&ref] (Vector *u,Vector *v )->bool{return angle(ref, *u-c)<angle(ref, *v-c);});
     return Polygon(vecs, n);
 }
 
